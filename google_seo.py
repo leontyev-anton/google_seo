@@ -123,7 +123,7 @@ def main(argv):
                 try:
                     pandas_gbq.to_gbq(df_domain, gbq_dataset+'.'+table_name, project_id=gbq_project_id, if_exists='replace')
                 except Exception as e:
-                    write_log(file, f'\n   ERROR: Can\'t write table \'{gbq_project_id}:{gbq_dataset}.{table_name}\' in BigQuery. Exception: {e.__class__}\n\n')
+                    write_log(file, f'\n   ERROR. Can\'t write table \'{gbq_project_id}:{gbq_dataset}.{table_name}\' in BigQuery: {e}\n\n')
                 else:
                     write_log(file, f'\n   Table in BigQuery: \'{gbq_project_id}:{gbq_dataset}.{table_name}\' success created. Number of rows: {len(df_domain)}\n\n')
             else:
