@@ -11,16 +11,16 @@
 # pip install pandas_gbq
 # pip install --upgrade oauth2client 
 
-import json
+import os
 import sys
-from googleapiclient import sample_tools
-from google.oauth2 import service_account
-import pandas
-import pandas_gbq
 import urllib.parse
 from datetime import datetime
+
+import pandas
+import pandas_gbq
 from dateutil.relativedelta import relativedelta
-import os
+from google.oauth2 import service_account
+from googleapiclient import sample_tools
 
 def main(argv):
     gcloud_key = 'C:\\Dropbox\\gsc\\google_credentials.json' # замените на свой - путь к JSON-ключу от сервисного аккаунта Google Cloud
